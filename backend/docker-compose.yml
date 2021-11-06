@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgresdata:/var/lib/postgresql/data
+  redis:
+    image: redis:alpine
+    restart: always
+    ports:
+      - "6379:6379"
+  api:
+    container_name: fullstack_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      PORT: '3000'
+      APP_SECRET: 'SECRET CODE'
+      SIGN_EXPIRES_IN: '30 days'
+      DATABASE_URL: 'postgresql://test:test@postgres:5432/test?schema=public&pool_timeout=0'
+      REDIS_HOST: 'redis'
+      REDIS_PORT: '6379'
+    ports:
+      - "3000:3000"
+    restart: on-failure
+    depends_on:
+      - postgres
+      - redis

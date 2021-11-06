@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  web:
+    container_name: frontend
+    build:
+      context: ""
+      dockerfile: Dockerfile
+    environment:
+      BACKEND_PORT: 3000
+    ports:
+      - "80:80"

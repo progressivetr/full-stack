@@ -1,0 +1,16 @@
+enum Priority {
+    LOW
+    MEDIUM
+    HIGH
+}
+
+model Todo {
+    id Int @id @default(autoincrement())
+    text String @db.Text
+    priority Priority
+    groupId Int
+    group Group @relation(fields: [groupId], references: [id])
+    isDone Boolean @default(false)
+    dueDate DateTime
+    createdAt DateTime @default(now())
+}

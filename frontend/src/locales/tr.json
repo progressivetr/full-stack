@@ -1,0 +1,28 @@
+{
+  "auth": {
+    "warning": "Uyarı",
+    "sessionExpired": "Oturum süresi dolmuştur. Lütfen tekrar girin yapın."
+  },
+  "http": {
+    "error": "Hata",
+    "permissionDenied": "Bu sayfayı görmeye yetkiniz yok!",
+    "loginToPerformOperation": "Bu işlemi gerçekleştirmek için giriş yapmalısınız.",
+    "operationFailed": "İşlem başarısız",
+    "serverConnectionError": "Sunucuya erişilemedi. Lütfen bağlantınızı kontrol edin.",
+    "retry": "Yeniden Dene",
+    "cancel": "İptal",
+    "close": "Kapat"
+  },
+  "form": {
+    "validation": {
+      "cantBeEmpty": "Bu alan boş bırakılamaz",
+      "stringLengthShouldBe255Max": "Uzunluk 255 karakteri geçmemelidir",
+      "portMessage": "Port değeri 0 ile 65535 aralığında olmalıdır",
+      "inputCorrectIP": "Geçerli bir IP giriniz",
+      "inputCorrectSubnet": "Geçerli bir Subnet giriniz",
+      "enterCorrectEmail": "Geçerli bir mail adresi giriniz",
+      "passwordAtLeast5CharactersText": "Parola alanı en az 5 karakter olmalıdır",
+      "angleMessage": "Açı değeri 0 ile 360 arasında olmalıdır"
+    }
+  }
+}
